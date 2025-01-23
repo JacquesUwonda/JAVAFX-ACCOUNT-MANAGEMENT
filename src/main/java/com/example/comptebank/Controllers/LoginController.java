@@ -24,9 +24,6 @@ public class LoginController {
 
     @FXML
     private Label loginErrorLabel, registerErrorLabel;
-
-    @FXML
-    private Button loginButton, registerButton;
     @FXML
     private void handleLogin() {
         String email = loginEmailField.getText();
@@ -119,8 +116,4 @@ public class LoginController {
         loginPasswordField.clear();
     }
 
-    private void redirectToHomePage() {
-        System.out.println("Redirecting to the home page...");
-        // Implement your logic to load the home page here.
-    }
 }

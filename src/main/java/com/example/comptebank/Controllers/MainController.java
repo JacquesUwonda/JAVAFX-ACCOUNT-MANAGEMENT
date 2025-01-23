@@ -4,10 +4,7 @@ import com.example.comptebank.MainApplication;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -16,6 +13,8 @@ import javafx.scene.text.Text;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import static com.example.comptebank.Controllers.Actions.recupererOperations;
 
@@ -107,13 +106,30 @@ public class MainController {
 
     @FXML
     private Text nombreComptesText;
+    @FXML
+    private TextField numCompteSoldeField;
 
+    @FXML
+    private Label soldeAvantLabel;
+
+    @FXML
+    private Label soldeApresLabel;
 
     @FXML
     private void ajouterCompte() {
         Actions.afficherDialogAjoutCompte(nombreOperationsText,nombreComptesText);
     }
 
+    @FXML
+    private void redirectToHomePage() {
+        MainApplication.showLoginPage();
+        // Implement your logic to load the home page here.
+    }
+    @FXML
+    private void consulterSolde() {
+        Solde.afficherSolde(numCompteSoldeField,soldeAvantLabel,soldeApresLabel);
+        // Implement your logic to load the home page here.
+    }
 
     @FXML
     private void initialize() {

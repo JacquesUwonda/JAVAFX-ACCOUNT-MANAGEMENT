@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="446.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comptebank.Controllers.MainController">
+   <children>
+      <AnchorPane layoutX="182.0" prefHeight="116.0" prefWidth="464.0" style="-fx-background-color: #2c3e50;">
+         <children>
+            <Pane layoutX="5.0" layoutY="12.0" prefHeight="92.0" prefWidth="448.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+               <children>
+                  <ImageView fitHeight="86.0" fitWidth="137.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/card5.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#2c3e50" layoutX="160.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Micro ATM BANK" textAlignment="CENTER" wrappingWidth="256.0">
+                     <font>
+                        <Font name="Monotype Corsiva" size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="-2.0" prefHeight="454.0" prefWidth="185.0" style="-fx-background-color: #2c3e50;">
+         <children>
+            <AnchorPane prefHeight="225.0" prefWidth="185.0">
+               <children>
+                  <ImageView fitHeight="161.0" fitWidth="165.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/atm.jpeg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <Button fx:id="accueilButton" mnemonicParsing="false" onAction="#onAccueillButtonClick" prefHeight="0.0" prefWidth="165.0" style="-fx-border-radius: 10;-fx-background-color:transparent;" text="Accueil" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="versementButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onVersementButtonClick" prefHeight="25.0" prefWidth="194.0" style="-fx-border-radius: 10;-fx-background-color:transparent;" text="Versement" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="retraitButton" layoutX="10.0" layoutY="45.0" mnemonicParsing="false" onAction="#onRetraitButtonClick" prefHeight="25.0" prefWidth="194.0" style="-fx-border-radius: 10;-fx-background-color:transparent;" text="Retrait" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="virementButton" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#onVirementButtonClick" prefHeight="25.0" prefWidth="194.0" style="-fx-border-radius: 10;-fx-background-color:transparent;" text="Virement" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="listeOperationButton" layoutX="10.0" layoutY="115.0" mnemonicParsing="false" onAction="#onListeOperationButtonClick" prefHeight="25.0" prefWidth="194.0" style="-fx-border-radius: 10;-fx-background-color:transparent;" text="Liste Operation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="deconnexionButton" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 20;" text="Deconnexion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="182.0" layoutY="115.0" prefHeight="339.0" prefWidth="446.0">
+         <children>
+            <VBox fx:id="accueilVBox" prefHeight="339.0" prefWidth="464.0">
+               <children>
+                  <AnchorPane prefHeight="45.0" prefWidth="464.0" style="-fx-background-color: #2c3e50;">
+                     <children>
+                        <Text fill="WHITE" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DashBoard" textAlignment="CENTER" wrappingWidth="447.53125">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="301.0" prefWidth="464.0" style="-fx-background-color: white;">
+                     <children>
+                        <AnchorPane layoutX="23.0" layoutY="27.0" prefHeight="131.0" prefWidth="104.0" style="-fx-background-color: lightpurple; -fx-border-color: #2F2565; -fx-border-radius: 10; -fx-background-radius: 10;">
+                           <children>
+                              <Text fill="#2c3e50" layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comptes">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="nombreComptesText" fill="#2c3e50" layoutX="9.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="56.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="145.0" layoutY="27.0" prefHeight="131.0" prefWidth="118.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10;">
+                           <children>
+                              <Text fill="#2c3e50" layoutX="9.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operations">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="nombreOperationsText" fill="#2c3e50" layoutX="11.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="56.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="ajoutCompteButton" layoutX="25.0" layoutY="181.0" mnemonicParsing="false" onAction="#ajouterCompte" prefHeight="33.0" prefWidth="241.0" style="-fx-background-color: #2c3e50; -fx-background-radius: 20; -fx-border-color: white; -fx-border-radius: 20;" text="Ajouter un nouveau compte" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="supprimerCompteButton" layoutX="25.0" layoutY="234.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="241.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: #2c3e50; -fx-border-radius: 20;" text="Supprimer un compte" textFill="#2c3e50">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="283.0" layoutY="27.0" prefHeight="240.0" prefWidth="159.0" style="-fx-background-radius: 10; -fx-background-color: #2c3e50; -fx-border-color: #2c3e50; -fx-border-radius: 10;">
+                           <children>
+                              <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="149.0" prefWidth="144.0" style="-fx-background-color: #cdf7ee; -fx-background-radius: 10;">
+                                 <children>
+                                    <Text layoutX="19.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde Apres Update" />
+                                    <Text layoutX="19.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde Avant Update" />
+                                    <Label layoutX="36.0" layoutY="26.0" text="200000">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="35.0" layoutY="95.0" text="200000">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="111.0" endY="0.5" layoutX="33.0" layoutY="72.0" startX="-33.0" startY="0.5" />
+                                 </children>
+                              </AnchorPane>
+                              <Button layoutX="14.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="verifier" />
+                              <Button layoutX="84.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Casher" />
+                              <Button layoutX="14.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" text="Update solde" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox fx:id="versementVBox" prefHeight="339.0" prefWidth="464.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="45.0" prefWidth="464.0" style="-fx-background-color: #2c3e50;">
+                     <children>
+                        <Text fill="WHITE" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Versement" textAlignment="CENTER" wrappingWidth="447.53125">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="294.0" prefWidth="464.0">
+                     <children>
+                        <Text fill="#2c3e50" layoutX="76.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Compte">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="numCompteField" layoutX="166.0" layoutY="73.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le numero de compte" />
+                        <Text fill="#2c3e50" layoutX="96.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="montantField" layoutX="166.0" layoutY="114.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le montant" />
+                        <Button fx:id="validerButton" layoutX="60.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #2c3e50; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Valider" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="annulerButton" layoutX="255.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20;" text="Annuler" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox fx:id="retraitVBox" prefHeight="339.0" prefWidth="464.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="45.0" prefWidth="464.0" style="-fx-background-color: #2c3e50;">
+                     <children>
+                        <Text fill="WHITE" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrait" textAlignment="CENTER" wrappingWidth="447.53125">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="294.0" prefWidth="464.0">
+                     <children>
+                        <Text fill="#2c3e50" layoutX="76.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Compte">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="numCompteRetraitField" layoutX="166.0" layoutY="73.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le numero de compte" />
+                        <Text fill="#2c3e50" layoutX="96.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="montantRetraitField" layoutX="166.0" layoutY="114.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le montant" />
+                        <Button fx:id="validerRetraitButton" layoutX="60.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #2c3e50; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Retirer" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="annulerRetraitButton" layoutX="255.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20;" text="Annuler" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox fx:id="virementVBox" prefHeight="339.0" prefWidth="464.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="45.0" prefWidth="464.0" style="-fx-background-color: #2c3e50;">
+                     <children>
+                        <Text fill="WHITE" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virement" textAlignment="CENTER" wrappingWidth="447.53125">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="294.0" prefWidth="464.0">
+                     <children>
+                        <Text fill="#2c3e50" layoutX="77.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Compte source" textAlignment="CENTER" wrappingWidth="87.94970703125">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="numCompteSourceField" layoutX="172.0" layoutY="45.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le numero de compte" />
+                        <Text fill="#2c3e50" layoutX="70.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Compte dest" textAlignment="CENTER" wrappingWidth="87.94970703125">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="numComptedestinataireField" layoutX="172.0" layoutY="108.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le numero de compte" />
+                        <Button fx:id="validerVirementButton" layoutX="60.0" layoutY="224.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #2c3e50; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Virer" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="annulerVirementButton" layoutX="255.0" layoutY="224.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20;" text="Annuler" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Text fill="#2c3e50" layoutX="90.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="montantVirementField" layoutX="172.0" layoutY="160.0" prefHeight="20.0" prefWidth="222.0" promptText="Entrez le montant" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox fx:id="listeOperationVBox" prefHeight="339.0" prefWidth="464.0" visible="false">
+                  <children>
+                     <AnchorPane prefHeight="45.0" prefWidth="464.0" style="-fx-background-color: #2c3e50;">
+                        <children>
+                           <Text fill="WHITE" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des operations" textAlignment="CENTER" wrappingWidth="447.53125">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Text>
+                        </children>
+                     </AnchorPane>
+                     <GridPane alignment="CENTER" prefHeight="316.0" prefWidth="464.0">
+                        <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints maxHeight="282.0" minHeight="10.0" prefHeight="274.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                           <TableView fx:id="operationTable" prefHeight="291.0" prefWidth="444.0" GridPane.rowIndex="1">
+                              <columns>
+                                 <TableColumn fx:id="idColumn" prefWidth="38.0" text="ID" />
+                                 <TableColumn fx:id="codeColumn" prefWidth="56.0" text="CODE" />
+                                 <TableColumn fx:id="typeOperationColumn" prefWidth="79.0" text="Type Oper" />
+                                 <TableColumn fx:id="montantColumn" prefWidth="76.0" text="MONTANT" />
+                                 <TableColumn fx:id="proprietaireColumn" prefWidth="79.0" text="INTITULE" />
+                                 <TableColumn fx:id="dateOperationColumn" prefWidth="135.0" text="DATE OPER" />
+                              </columns>
+                              <columnResizePolicy>
+                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                              </columnResizePolicy>
+                           </TableView>
+                        </children>
+                        <padding>
+                           <Insets bottom="10.0" left="10.0" right="10.0" />
+                        </padding>
+                     </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

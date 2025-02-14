@@ -15,8 +15,15 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.example.comptebank.Controllers.Actions.recupererOperations;
+
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class MainController {
 
@@ -129,6 +136,22 @@ public class MainController {
     private void consulterSolde() {
         Solde.afficherSolde(numCompteSoldeField,soldeAvantLabel,soldeApresLabel);
         // Implement your logic to load the home page here.
+    }
+//JasperRepport methode
+    @FXML
+    private void voirRapport() {
+        JasperPrint jasperPrint;
+        Map param=new HashMap();
+
+        try {
+            jasperPrint= JasperFillManager.fillReport("/fxml/RapportOperation.jasper",param,MainController.connection);
+            JasperViewer viewer=new JasperViewer(jasperPrint,false);
+            viewer.setTitle("Rapport des Operations");
+            viewer.setVisible(true);
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @FXML

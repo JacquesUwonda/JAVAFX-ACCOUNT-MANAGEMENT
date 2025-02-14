@@ -2,6 +2,7 @@ module com.example.comptebank {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires net.sf.jasperreports.core;
 
 
     opens com.example.comptebank to javafx.fxml;

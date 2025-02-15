@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -23,6 +24,9 @@ import static com.example.comptebank.Controllers.Actions.recupererOperations;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JRSaveContributor;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class MainController {
@@ -98,6 +102,7 @@ public class MainController {
     @FXML private Button retraitButton;
     @FXML private Button virementButton;
     @FXML private Button listeOperationButton;
+    @FXML private Button voirRapportButton;
     @FXML private Button deconnexionButton;
     @FXML private Button ajoutCompteButton;
     @FXML private Button supprimerCompteButton;
@@ -138,21 +143,51 @@ public class MainController {
         // Implement your logic to load the home page here.
     }
 //JasperRepport methode
+
     @FXML
     private void voirRapport() {
         JasperPrint jasperPrint;
-        Map param=new HashMap();
+        Map param = new HashMap();
 
         try {
-            jasperPrint= JasperFillManager.fillReport("/fxml/RapportOperation.jasper",param,MainController.connection);
-            JasperViewer viewer=new JasperViewer(jasperPrint,false);
-            viewer.setTitle("Rapport des Operations");
-            viewer.setVisible(true);
-        } catch (JRException e) {
-            throw new RuntimeException(e);
-        }
+            // Chargement du rapport depuis les ressources
+            InputStream reportStream = getClass().getResourceAsStream("/fxml/RapportOperation.jasper");
+            if (reportStream == null) {
+                throw new RuntimeException("Le fichier RapportOperation.jasper est introuvable !");
+            }
 
+            // Charger le rapport Jasper
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObject(reportStream);
+
+            // Générer le rapport avec les paramètres et la connexion à la base de données
+            jasperPrint = JasperFillManager.fillReport(jasperReport, param, MainController.connection);
+
+            // Afficher le rapport dans une fenêtre
+            JasperViewer viewer = new JasperViewer(jasperPrint, false);
+            viewer.setTitle("Rapport des Opérations");
+            viewer.setVisible(true);
+
+        } catch (JRException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Erreur lors du chargement du rapport Jasper", e);
+        }
     }
+
+//    @FXML
+//    private void voirRapport() {
+//        JasperPrint jasperPrint;
+//        Map param=new HashMap();
+//
+//        try {
+//            jasperPrint= JasperFillManager.fillReport("/fxml/RapportOperation.jasper",param,MainController.connection);
+//            JasperViewer viewer=new JasperViewer(jasperPrint,false);
+//            viewer.setTitle("Rapport des Operations");
+//            viewer.setVisible(true);
+//        } catch (JRException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//    }
 
     @FXML
     private void initialize() {

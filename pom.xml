@@ -32,6 +32,26 @@
             <version>8.0.33</version> <!-- Utilisez la dernière version stable -->
         </dependency>
 
+        <!-- Dépendance pour l'exportation en Excel -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-excel</artifactId>
+            <version>7.0.1</version>
+        </dependency>
+
+        <!-- Dépendance pour l'exportation en PDF, Word, etc. -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>7.0.1</version>
+        </dependency>
+
+        <!-- Bibliothèque Apache POI (nécessaire pour Excel) -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

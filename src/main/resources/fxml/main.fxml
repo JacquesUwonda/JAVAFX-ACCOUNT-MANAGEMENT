@@ -103,12 +103,20 @@
                   <Insets bottom="3.0" top="3.0" />
                </padding>
             </Button>
+            <Button fx:id="voirRapportButton" layoutX="20.0" layoutY="331.0" mnemonicParsing="false" onAction="#voirRapport" prefHeight="25.0" prefWidth="194.0" style="-fx-border-radius: 10;-fx-background-color:transparent;" text="Voir Rapport" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="3.0" top="3.0" />
+               </padding>
+            </Button>
             <Button fx:id="deconnexionButton" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" onAction="#redirectToHomePage" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 20;" text="Deconnexion" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
          </children>
@@ -185,7 +193,7 @@
                                     <Line endX="111.0" endY="0.5" layoutX="33.0" layoutY="72.0" startX="-33.0" startY="0.5" />
                                  </children>
                               </AnchorPane>
-                              <Button onAction="#consulterSolde" layoutX="6.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Consulter solde" />
+                              <Button layoutX="6.0" layoutY="201.0" mnemonicParsing="false" onAction="#consulterSolde" prefHeight="25.0" prefWidth="145.0" text="Consulter solde" />
                               <TextField fx:id="numCompteSoldeField" layoutX="7.0" layoutY="165.0" prefHeight="25.0" prefWidth="145.0" promptText="numero de compte" />
                            </children>
                         </AnchorPane>
